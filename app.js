@@ -45,8 +45,6 @@ const selectItem = (event, img) => {
         sliders.push(img);
     } else {
         let deselect = sliders.indexOf(img);
-        //alert('Hey, Already added !');
-        //sliders.pop(img);
         sliders.splice(deselect, 1);
     }
 };
@@ -113,6 +111,13 @@ const displayImg = () => {
     sliders.length = 0;
     toggleSpinner();
 };
+const toggleSpinner = () => {
+    const spinner = document.getElementById('spinner').classList;
+    const imagesArea = document.querySelector('.images').classList;
+    spinner.toggle('d-none');
+    imagesArea.toggle('d-none');
+};
+
 searchBtn.addEventListener('click', function () {
     displayImg();
 });
@@ -129,9 +134,4 @@ sliderBtn.addEventListener('click', function () {
         createSlider();
     }
 });
-const toggleSpinner = () => {
-    const spinner = document.getElementById('loading-spinner').classList;
-    const imagesArea = document.querySelector('.images').classList;
-    spinner.toggle('d-none');
-    imagesArea.toggle('d-none');
-};
+
