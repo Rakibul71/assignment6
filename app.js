@@ -124,7 +124,7 @@ search.addEventListener('keyup', function (e) {
 sliderBtn.addEventListener('click', function () {
     const duration = document.getElementById('duration').value || 1000;
     if (duration < 0) {
-        alert('Negative time is not allowed ⚠');
+        alert('Please Enter the Positive Time');
     } else {
         createSlider();
     }
